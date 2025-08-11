@@ -58,7 +58,7 @@ const HomePage: FC = () => {
                   className="rounded-full mx-auto mb-4"
                 />
               )}
-              <p className="mb-6 text-gray-600">You're now signed in.</p>
+              <p className="mb-6 text-gray-600">You are now signed in.</p>
               <button
                 onClick={() => signOut()}
                 className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded transition duration-200"
