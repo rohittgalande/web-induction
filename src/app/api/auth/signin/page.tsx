@@ -16,7 +16,7 @@ export default function SignInPage() {
         </p>
 
         {/* Google Sign-In */}
-        <button
+        {/* <button
           onClick={() =>
             signIn('google', {
               prompt: 'select_account',
@@ -28,7 +28,7 @@ export default function SignInPage() {
         >
           <FcGoogle size={24} />
           Continue with Google
-        </button>
+        </button> */}
 
         {/* Microsoft Sign-In */}
         <button

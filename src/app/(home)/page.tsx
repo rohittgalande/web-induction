@@ -31,7 +31,7 @@ const HomePage: FC = () => {
               </p>
 
               <div className="flex flex-col gap-4">
-                <button
+                {/* <button
                   onClick={() =>
                     signIn('google', {
                       prompt: 'select_account',
@@ -42,7 +42,7 @@ const HomePage: FC = () => {
                   className="flex items-center justify-center gap-2 bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transform hover:scale-105 transition duration-200"
                 >
                   <FaGoogle size={18} /> Sign in with Google
-                </button>
+                </button> */}
 
                 <button
                   onClick={() =>
