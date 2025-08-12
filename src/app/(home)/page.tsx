@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { signIn, signOut, useSession } from 'next-auth/react';
-import type { Session } from 'next-auth';
-import type { FC } from 'react';
-import { HomeLayout } from 'fumadocs-ui/layouts/home';
-import { baseOptions } from '../layout.config';
-import { FaGoogle, FaMicrosoft, FaSignOutAlt } from 'react-icons/fa';
-import { motion } from 'framer-motion';
+import Image from "next/image";
+import { signIn, signOut, useSession } from "next-auth/react";
+import type { Session } from "next-auth";
+import type { FC } from "react";
+import { HomeLayout } from "fumadocs-ui/layouts/home";
+import { baseOptions } from "../layout.config";
+import { FaGoogle, FaMicrosoft, FaSignOutAlt } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const HomePage: FC = () => {
   const { data: session } = useSession() as { data: Session | null };
@@ -46,10 +46,10 @@ const HomePage: FC = () => {
 
                 <button
                   onClick={() =>
-                    signIn('azure-ad', {
-                      prompt: 'select_account',
+                    signIn("azure-ad", {
+                      prompt: "select_account",
                       redirect: true,
-                      callbackUrl: '/',
+                      callbackUrl: "/",
                     })
                   }
                   className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transform hover:scale-105 transition duration-200"
@@ -88,7 +88,13 @@ const HomePage: FC = () => {
               <p className="mb-6 text-gray-600">You are now signed in.</p>
 
               <button
-                onClick={() => signOut()}
+                onClick={() => {
+                  signOut({ redirect: false }).then(() => {
+                    window.location.href =
+                      "https://login.microsoftonline.com/common/oauth2/v2.0/logout?post_logout_redirect_uri=" +
+                      encodeURIComponent(window.location.origin);
+                  });
+                }}
                 className="flex items-center justify-center gap-2 bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transform hover:scale-105 transition duration-200"
               >
                 <FaSignOutAlt size={18} /> Sign out
