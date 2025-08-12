@@ -26,7 +26,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 }
 
 
-//If you want to use the other search option here is steps
+//If you want to use the other search option here is
   //  search={{
   //           search: algoliaSearch({
   //             appId: 'YOUR_ALGOLIA_APP_ID',
